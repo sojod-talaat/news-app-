@@ -1,0 +1,20 @@
+{
+    "status": "ok",
+    "totalResults": 70,
+    "articles": [
+    {
+    "source": {
+    "id": "the-washington-post",
+    "name": "The Washington Post"
+    },
+    "author": "Heather Kelly",
+    "title": "How to see your ratings from Uber drivers, and be a better passenger - The Washington Post",
+    "description": "Your Uber drivers have been rating you for years. A new option in the app lets you see how many 1 star ratings you've received.",
+    "url": "https://www.washingtonpost.com/technology/2022/02/16/uber-scores-passengers/",
+    "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MZ7FG4IHMBERRFRKRC7H46J3NM.jpg&w=1440",
+    "publishedAt": "2022-02-17T11:49:14Z",
+    "content": "Story continues below advertisement\r\nTo find this information, make sure youve updated to the latest version of the app and that you have a bit of free time and patience. Open Uber, tap on your profi… [+3856 chars]"
+    }
+    
+]
+}
