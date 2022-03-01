@@ -29,7 +29,6 @@ class Search extends StatelessWidget {
                         // border:BorderRadius()
                         label: Text('search '),
                         prefix: Icon(Icons.search),
-                        
                       ),
                     ),
                   ),
