@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) {
-        return appcubit()..changemodeapp();
+        return appcubit()
+          ..getBusinssData()
+          ..changemodeapp();
       },
       child: BlocConsumer<appcubit, NewsStates>(
           listener: (context, stets) {},

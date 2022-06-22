@@ -30,24 +30,22 @@ class Search extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(width:50),
                   Expanded(
                     child: ListView.separated(
-                        itemBuilder: (context, index) =>
-                            news(list[index], context),
-                        separatorBuilder: (context, index) {
-                          return Container(
-                            width: double.infinity,
-                            height: 1.0,
-                            color: Colors.grey[300],
-                          );
-                        },
-                        itemCount: 5),
+                  physics: BouncingScrollPhysics(),
+                  itemBuilder: (context, index) => news(list[index], context),
+                  separatorBuilder: (context, index) {
+                    return Container(
+                      width: double.infinity,
+                      height: 1.0,
+                      color: Colors.grey[300],
+                    );
+                  },
+                  itemCount: 20),
                   ),
                 ],
-              )
-
-              // Center(child: Text('sojod')),
-              );
+              ));
         });
   }
 }

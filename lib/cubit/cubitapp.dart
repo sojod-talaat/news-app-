@@ -10,15 +10,24 @@ import 'package:newsapp/network/remote/dio.dart';
 class appcubit extends Cubit<NewsStates> {
   appcubit() : super(NewsInitialState());
   static appcubit get(context) => BlocProvider.of(context);
-  int currentindex = 1;
+  int currentindex = 0;
+   List<BottomNavigationBarItem> bootom = [
+    BottomNavigationBarItem(
+        icon: Icon(Icons.business_center), label: 'Business'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.sports_baseball_sharp), label: 'Sport'),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.science_outlined), label: 'Science'),
+    //BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+  ];
 
   //Color selectcolor = Colors.deepOrange;
   // ignore: non_constant_identifier_names
   void bootomchange(index) {
     currentindex = index;
-    if (index == 0) {
+    /*if (index == 0) {
       getBusinssData();
-    }
+    }*/
     if (index == 1) {
       getSportDate();
     }
@@ -40,15 +49,7 @@ class appcubit extends Cubit<NewsStates> {
     Sport(),
     science(),
   ];
-  List<BottomNavigationBarItem> bootom = [
-    BottomNavigationBarItem(
-        icon: Icon(Icons.business_center), label: 'Business'),
-    BottomNavigationBarItem(
-        icon: Icon(Icons.sports_baseball_sharp), label: 'Sport'),
-    BottomNavigationBarItem(
-        icon: Icon(Icons.science_outlined), label: 'Science'),
-    //BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
-  ];
+ 
   List<dynamic> businssData = [];
   List<dynamic> sportData = [];
   List<dynamic> scienceData = [];
@@ -97,12 +98,11 @@ class appcubit extends Cubit<NewsStates> {
       emit(newserrorscienssgetstates(error.toString()));
     });
   }
+
   List<dynamic> searchnewss = [];
   void searchnews(String value) {
     emit(newslodingsearchStests());
-    diohelper.getdata(
-      url: "v2/evreything", 
-      query: {
+    diohelper.getdata(url: "v2/evreything", query: {
       'q': '$value',
       'apiKey': '509f52c1846f44d59a7ce21d6bcff7b9',
     }).then((value) {
